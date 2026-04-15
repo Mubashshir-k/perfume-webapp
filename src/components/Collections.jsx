@@ -1,0 +1,44 @@
+import { collections } from '../data/products'
+
+export default function Collections({ onSelectCollection }) {
+  const collectionMappings = {
+    'For Him': 'for-him',
+    'Unisex': 'unisex',
+    'For Her': 'for-her'
+  }
+
+  return (
+    <section className="py-12 lg:py-24 bg-gradient-to-b from-surface-container-low to-surface">
+      <div className="text-center mb-8 lg:mb-16 space-y-2 lg:space-y-4 px-4 lg:px-24">
+        <span className="font-label text-xs tracking-[0.5em] uppercase text-secondary font-bold">The Archives</span>
+        <h2 className="font-headline text-4xl lg:text-5xl font-bold">Collections for Every Soul</h2>
+        <p className="font-body text-stone-600 max-w-2xl mx-auto">Discover our curated collections, each telling a unique story of elegance and innovation.</p>
+      </div>
+      <div className="flex overflow-x-auto gap-6 lg:gap-8 pb-4 scroll-smooth no-scrollbar lg:grid lg:grid-cols-3 lg:gap-8 lg:overflow-x-visible items-start snap-x snap-mandatory lg:px-24">
+        {collections.map((collection, index) => (
+          <button
+            key={collection.id}
+            onClick={() => onSelectCollection({ name: collection.name, type: collectionMappings[collection.name] })}
+            className={`min-w-[75vw] sm:min-w-[calc(50%-12px)] lg:min-w-0 flex-shrink-0 lg:flex-shrink group relative overflow-hidden transition-all duration-700 ${collection.height} ${collection.marginTop} text-left cursor-pointer snap-start ${index === 0 ? 'ml-4 lg:ml-0' : ''} ${index === collections.length - 1 ? 'mr-4 lg:mr-0' : ''}`}
+          >
+            <img
+              alt={collection.name}
+              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000"
+              src={collection.image}
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none"></div>
+            <div className="absolute inset-0 border border-white/10 group-hover:border-white/30 transition-colors duration-700 pointer-events-none"></div>
+            <div className={`absolute bottom-6 left-6 lg:bottom-10 lg:left-10 transition-all duration-500 ${collection.name === 'Unisex' ? 'bottom-8 left-8 lg:bottom-14 lg:left-14' : ''}`}>
+              <h3 className={`font-headline text-white mb-2 lg:mb-3 font-bold group-hover:text-secondary transition-colors ${collection.name === 'Unisex' ? 'text-3xl lg:text-5xl lg:mb-4' : 'text-2xl lg:text-4xl'}`}>
+                {collection.name}
+              </h3>
+              <div className="text-white font-label text-[8px] lg:text-[10px] tracking-[0.2em] uppercase border-b border-white/40 group-hover:border-white transition-colors inline-block pb-1">
+                Explore Collection
+              </div>
+            </div>
+          </button>
+        ))}
+      </div>
+    </section>
+  )
+}
