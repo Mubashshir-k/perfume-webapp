@@ -10,7 +10,7 @@ export default function Collections({ onSelectCollection }) {
   return (
     <section className="py-12 lg:py-24 bg-gradient-to-b from-surface-container-low to-surface">
       <div className="text-center mb-6 lg:mb-16 px-4 lg:px-24">
-        <h2 className="font-headline text-2xl lg:text-5xl font-bold">Collections for Every Soul</h2>
+        <h2 className="font-headline text-2xl lg:text-5xl font-bold text-stone-900 tracking-tight drop-shadow-sm">💫 Collections for Every Soul</h2>
       </div>
       <div className="flex overflow-x-auto gap-6 lg:gap-8 pb-4 scroll-smooth no-scrollbar lg:grid lg:grid-cols-3 lg:gap-8 lg:overflow-x-visible items-start snap-x snap-mandatory lg:px-24">
         {collections.map((collection, index) => (

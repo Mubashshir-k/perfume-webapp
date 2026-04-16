@@ -7,8 +7,7 @@ export const products = [
     price: 499,
     originalPrice: 999,
     discount: "50%",
-    image:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuCBcRQhscvCeniXDXpviYXDKx80_8vabezI5OXa4a-At7XAnwmGZ9GRG-KnZkmtM5gpb-og4VeiRytynTTiCFdw2gcf-hqNLXKIPJ7KWRttYu9143D89lNQzNByEBTCgzs5ToL6hK1pH-MpqurPVaUZc1hKpeDt5PI9SDvi2hRbAmMaEumrLZXAn7giv41Og1zUU1OhicYTfnzfzhn7Q89o5m_DVSNQwVizreN7MaDp58_qG_wQf0YPSskBOXOqdNqGGzoboMoWkrc",
+    image: "/VID_20260415_231509_138.mp4",
     isVideo: true,
   },
   {
@@ -19,8 +18,7 @@ export const products = [
     price: 649,
     originalPrice: 1299,
     discount: "50%",
-    image:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuADVVu6iNZKx_4Aiwoahb8ROe7Kv-sI943n-2dYNxcTCokjApAPMnj57cT0uG5ms1On04RSxH021OSK89VqY0AZ6jGIIeRw9NZsj-sUz8_IBUcgZidC554GzcpBhHgEpAl0F5OsSZ8bxslXVLFhPjaWdgHztOi-z7sLSCZCd23k9v5A9f1UGyzKkSBNNXanNzCHK8gdS2W7OSv-BkqtsMwlEREHVsH2R4-YB5BgOcEUrl1c4306bMqO-dcZ0KNDiDV7eBBqCyYJW6E",
+    image: "/VID_20260415_232340_541.mp4",
     isVideo: true,
   },
   {
@@ -31,8 +29,7 @@ export const products = [
     price: 399,
     originalPrice: 799,
     discount: "50%",
-    image:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuCJzwSCrC9RAKfnNC7nftAJeeh7vW1mGqa8MzjO9xZCMi-jrRNp4lI5UOqWMs_0BMbrBk8MtnRMr_XBRm3VU2fQTDGp9SL294sxIPrn_sSMxNdDuaeXYMWZmupQ4zJgEUZqk2XnsFly-VHi9nZJ5RC-rnIIUuJLuO_k6ckfP8eGIjvlq_dJYOr1VlSyylGTeuz_Tt0EA_ytOfh-xuuZ2B0wLBsIIWYZCOmSwvLxv5ySC_H2-uafBgAyxYIXBV8W_iDWakBMdEjBvzE",
+    image: "/VID_20260415_232401_763.mp4",
     isVideo: true,
   },
   {

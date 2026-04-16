@@ -25,7 +25,10 @@ export default function Guarantee() {
   return (
     <section className="py-12 lg:py-24 px-4 lg:px-24 bg-gradient-to-b from-surface to-surface-container">
       <div className="text-center mb-6 lg:mb-16">
-        <h2 className="font-headline text-2xl lg:text-5xl font-bold">Our Guarantee</h2>
+        <div className="flex items-center justify-center gap-3 mb-4">
+          <span className="material-symbols-outlined text-stone-900" style={{ fontSize: '40px', fontVariationSettings: "'FILL' 1, 'wght' 400" }}>verified</span>
+        </div>
+        <h2 className="font-headline text-2xl lg:text-5xl font-bold text-stone-900 tracking-tight drop-shadow-sm">Our Guarantee</h2>
       </div>
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-8">
         {guarantees.map(item => (

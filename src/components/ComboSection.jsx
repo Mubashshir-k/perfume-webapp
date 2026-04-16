@@ -16,22 +16,22 @@ export default function ComboSection({ onAddToCart }) {
   return (
     <section className="py-12 lg:py-24 bg-gradient-to-b from-surface to-surface-container">
       <div className="text-center mb-6 lg:mb-16 px-4 lg:px-24">
-        <h2 className="font-headline text-2xl lg:text-5xl font-bold">Combo Collections</h2>
+        <h2 className="font-headline text-2xl lg:text-5xl font-bold text-stone-900 tracking-tight drop-shadow-sm">🎁 Combo Collections</h2>
       </div>
       <div className="flex overflow-x-auto gap-3 lg:gap-8 pb-4 scroll-smooth no-scrollbar lg:grid lg:grid-cols-3 lg:gap-8 lg:overflow-x-visible snap-x snap-mandatory lg:px-24">
         {combos.map((combo, index) => (
           <div
             key={combo.id}
-            className={`w-[72vw] min-w-[240px] max-w-[300px] lg:w-auto lg:min-w-0 lg:max-w-none flex-shrink-0 lg:flex-shrink group relative overflow-hidden transition-all duration-500 snap-start rounded-lg lg:rounded-xl shadow-md hover:shadow-2xl ${index === 0 ? 'ml-4 lg:ml-0' : ''} ${index === combos.length - 1 ? 'mr-4 lg:mr-0' : ''}`}
+            className={`w-[72vw] min-w-[240px] max-w-[300px] lg:w-auto lg:min-w-0 lg:max-w-none flex-shrink-0 lg:flex-shrink group relative overflow-hidden transition-all duration-500 snap-start shadow-md hover:shadow-2xl ${index === 0 ? 'ml-4 lg:ml-0' : ''} ${index === combos.length - 1 ? 'mr-4 lg:mr-0' : ''}`}
           >
-            <div className="relative aspect-[4/5] overflow-hidden bg-surface-container rounded-lg lg:rounded-xl">
+            <div className="relative aspect-[4/5] overflow-hidden bg-surface-container">
               <img
                 alt={combo.name}
                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000"
                 src={combo.image}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/50 to-black/10 z-10 pointer-events-none group-hover:from-black/97 group-hover:via-black/60 transition-all duration-700"></div>
-              <div className="absolute inset-0 border border-white/15 group-hover:border-white/30 rounded-lg lg:rounded-xl transition-colors duration-700 pointer-events-none shadow-inner"></div>
+              <div className="absolute inset-0 border border-white/15 group-hover:border-white/30 transition-colors duration-700 pointer-events-none shadow-inner"></div>
               <div className="absolute top-3 left-3 bg-white/90 backdrop-blur-md text-black px-2.5 py-1 text-[7px] lg:text-[9px] font-bold tracking-[0.2em] uppercase shadow-sm z-20">
                 Combo
               </div>

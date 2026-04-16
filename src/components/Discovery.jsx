@@ -17,7 +17,7 @@ export default function Discovery({ onStartJourney }) {
             <span className="font-label text-xs tracking-[0.4em] uppercase text-secondary font-bold">
               Finding Your Essence
             </span>
-            <h2 className="font-headline text-2xl lg:text-5xl font-bold leading-tight">The Discovery Set</h2>
+            <h2 className="font-headline text-2xl lg:text-5xl font-bold leading-tight">🔍 The Discovery Set</h2>
             <p className="font-body text-stone-600 text-xs lg:text-sm">
               Explore our curated collection. Six 2ml samples to find your signature scent.
             </p>
