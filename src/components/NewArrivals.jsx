@@ -5,10 +5,8 @@ export default function NewArrivals({ onAddToCart }) {
 
   return (
     <section className="py-12 lg:py-24 bg-gradient-to-b from-surface to-surface-container">
-      <div className="text-center mb-6 lg:mb-16 space-y-1.5 lg:space-y-4 px-4 lg:px-24">
-        <span className="font-label text-xs tracking-[0.4em] uppercase text-secondary">The New Chapter</span>
+      <div className="text-center mb-6 lg:mb-16 px-4 lg:px-24">
         <h2 className="font-headline text-2xl lg:text-5xl font-bold">Latest Arrivals</h2>
-        <p className="font-body text-stone-600 max-w-2xl mx-auto text-xs lg:text-base">Fresh fragrances that define contemporary elegance and timeless appeal.</p>
       </div>
       <div className="flex overflow-x-auto gap-3 lg:gap-8 pb-4 scroll-smooth no-scrollbar lg:grid lg:grid-cols-4 lg:gap-8 lg:overflow-x-visible snap-x snap-mandatory lg:px-24">
         {newArrivals.map((product, index) => (

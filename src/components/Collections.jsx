@@ -9,10 +9,8 @@ export default function Collections({ onSelectCollection }) {
 
   return (
     <section className="py-12 lg:py-24 bg-gradient-to-b from-surface-container-low to-surface">
-      <div className="text-center mb-6 lg:mb-16 space-y-1.5 lg:space-y-4 px-4 lg:px-24">
-        <span className="font-label text-xs tracking-[0.5em] uppercase text-secondary font-bold">The Archives</span>
+      <div className="text-center mb-6 lg:mb-16 px-4 lg:px-24">
         <h2 className="font-headline text-2xl lg:text-5xl font-bold">Collections for Every Soul</h2>
-        <p className="font-body text-stone-600 max-w-2xl mx-auto text-xs lg:text-base">Discover our curated collections, each telling a unique story of elegance and innovation.</p>
       </div>
       <div className="flex overflow-x-auto gap-6 lg:gap-8 pb-4 scroll-smooth no-scrollbar lg:grid lg:grid-cols-3 lg:gap-8 lg:overflow-x-visible items-start snap-x snap-mandatory lg:px-24">
         {collections.map((collection, index) => (

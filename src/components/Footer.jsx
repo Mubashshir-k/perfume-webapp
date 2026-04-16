@@ -1,4 +1,62 @@
+import { useState } from 'react'
+
 export default function Footer({ onNavigatePage }) {
+  const [contactForm, setContactForm] = useState({ name: '', email: '', message: '' })
+  const [isLoading, setIsLoading] = useState(false)
+  const [submitStatus, setSubmitStatus] = useState(null)
+
+  const handleContactChange = (e) => {
+    const { name, value } = e.target
+    setContactForm(prev => ({ ...prev, [name]: value }))
+  }
+
+  const handleContactSubmit = async (e) => {
+    e.preventDefault()
+    setIsLoading(true)
+    setSubmitStatus(null)
+
+    // In development (localhost), show success message without calling function
+    // Production will use actual Netlify Functions when deployed
+    if (import.meta.env.DEV || window.location.hostname === 'localhost') {
+      setTimeout(() => {
+        console.log('Development Mode - Form Data:', contactForm)
+        alert('Thank you for reaching out! Your message has been received. We will get back to you shortly.')
+        setContactForm({ name: '', email: '', message: '' })
+        setIsLoading(false)
+      }, 800)
+      return
+    }
+
+    try {
+      const response = await fetch('/.netlify/functions/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(contactForm),
+      })
+
+      const data = await response.json()
+
+      if (response.ok) {
+        alert('Thank you! Your message has been sent successfully. We will get back to you shortly.')
+        setContactForm({ name: '', email: '', message: '' })
+      } else {
+        setSubmitStatus({
+          type: 'error',
+          message: data.error || 'Failed to send message. Please try again.',
+        })
+      }
+    } catch (error) {
+      setSubmitStatus({
+        type: 'error',
+        message: 'Failed to send message. Please try again later.',
+      })
+    } finally {
+      setIsLoading(false)
+    }
+  }
+
   return (
     <footer id="footer" className="bg-gradient-to-b from-black via-stone-950 to-black/95 w-full py-12 lg:py-20 px-4 md:px-12 text-white relative overflow-hidden">
       {/* Decorative gradient blur */}
@@ -13,26 +71,35 @@ export default function Footer({ onNavigatePage }) {
             <p className="font-body text-sm text-white/70 leading-relaxed">
               Have a question? We'd love to hear from you.
             </p>
-            <form className="space-y-6 pt-2" onSubmit={(e) => { e.preventDefault(); alert('Thank you for reaching out! We will get back to you shortly.'); }}>
+            <form className="space-y-6 pt-2" onSubmit={handleContactSubmit}>
               <input
                 className="w-full bg-transparent border-0 border-b border-white/30 px-0 py-2 text-xs lg:text-sm font-body text-white placeholder-white/50 focus:outline-none focus:border-secondary focus:ring-0 transition-all rounded-none"
                 placeholder="Name"
+                name="name"
+                value={contactForm.name}
+                onChange={handleContactChange}
                 type="text"
                 required
               />
               <input
                 className="w-full bg-transparent border-0 border-b border-white/30 px-0 py-2 text-xs lg:text-sm font-body text-white placeholder-white/50 focus:outline-none focus:border-secondary focus:ring-0 transition-all rounded-none"
                 placeholder="Email"
+                name="email"
+                value={contactForm.email}
+                onChange={handleContactChange}
                 type="email"
                 required
               />
               <textarea
                 className="w-full bg-transparent border-0 border-b border-white/30 px-0 py-2 text-xs lg:text-sm font-body text-white placeholder-white/50 focus:outline-none focus:border-secondary focus:ring-0 transition-all resize-none h-10 rounded-none"
                 placeholder="Message"
+                name="message"
+                value={contactForm.message}
+                onChange={handleContactChange}
                 required
               ></textarea>
-              <button type="submit" className="w-full mt-4 py-3 border border-secondary/50 text-white text-[9px] lg:text-[10px] tracking-[0.2em] font-bold uppercase transition-all hover:bg-secondary hover:text-black hover:border-secondary rounded-lg shadow-lg hover:shadow-xl">
-                Send Message
+              <button type="submit" disabled={isLoading} className="w-full mt-4 py-3 border border-stone-800 text-stone-900 text-[9px] lg:text-[10px] tracking-[0.2em] font-bold uppercase transition-all hover:bg-stone-900 hover:text-stone-100 hover:shadow-lg active:shadow-md active:scale-95 rounded-lg disabled:opacity-50 disabled:cursor-not-allowed">
+                {isLoading ? 'Sending...' : 'Send Message'}
               </button>
             </form>
           </div>

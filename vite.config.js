@@ -6,5 +6,12 @@ export default defineConfig({
   server: {
     port: 5173,
     open: true,
+    proxy: {
+      "/.netlify/functions": {
+        target: "http://localhost:9000",
+        changeOrigin: true,
+        rewrite: (path) => path.replace("/.netlify/functions", ""),
+      },
+    },
   },
 });

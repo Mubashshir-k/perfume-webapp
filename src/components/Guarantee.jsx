@@ -24,10 +24,8 @@ const guarantees = [
 export default function Guarantee() {
   return (
     <section className="py-12 lg:py-24 px-4 lg:px-24 bg-gradient-to-b from-surface to-surface-container">
-      <div className="text-center mb-6 lg:mb-16 space-y-1.5 lg:space-y-4">
-        <span className="font-label text-xs tracking-[0.5em] uppercase text-secondary font-bold">Trust & Quality</span>
+      <div className="text-center mb-6 lg:mb-16">
         <h2 className="font-headline text-2xl lg:text-5xl font-bold">Our Guarantee</h2>
-        <p className="font-body text-xs lg:text-base text-stone-600 max-w-2xl mx-auto">We stand behind every product with our commitment to excellence and customer satisfaction.</p>
       </div>
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-8">
         {guarantees.map(item => (

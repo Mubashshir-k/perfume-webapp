@@ -22,7 +22,7 @@ export default function Discovery({ onStartJourney }) {
               Explore our curated collection. Six 2ml samples to find your signature scent.
             </p>
           </div>
-          <button onClick={onStartJourney} className="px-8 py-3.5 bg-secondary hover:bg-secondary/90 text-on-secondary text-xs tracking-widest font-bold uppercase transition-all duration-300 hover:shadow-lg active:scale-95 rounded-full">
+          <button onClick={onStartJourney} className="px-8 py-3.5 border border-stone-800 text-stone-900 text-xs tracking-widest font-bold uppercase transition-all duration-300 hover:bg-stone-900 hover:text-stone-100 hover:shadow-lg active:shadow-md active:scale-95 rounded-lg">
             Start Discovery Journey
           </button>
         </div>
