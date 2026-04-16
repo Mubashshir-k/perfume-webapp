@@ -24,18 +24,19 @@ export default function ComboSection({ onAddToCart }) {
         {combos.map((combo, index) => (
           <div
             key={combo.id}
-            className={`w-[65vw] min-w-[220px] max-w-[280px] lg:w-auto lg:min-w-0 lg:max-w-none flex-shrink-0 lg:flex-shrink group relative overflow-hidden transition-all duration-500 snap-start ${index === 0 ? 'ml-4 lg:ml-0' : ''} ${index === combos.length - 1 ? 'mr-4 lg:mr-0' : ''}`}
+            className={`w-[72vw] min-w-[240px] max-w-[300px] lg:w-auto lg:min-w-0 lg:max-w-none flex-shrink-0 lg:flex-shrink group relative overflow-hidden transition-all duration-500 snap-start rounded-lg lg:rounded-xl shadow-md hover:shadow-2xl ${index === 0 ? 'ml-4 lg:ml-0' : ''} ${index === combos.length - 1 ? 'mr-4 lg:mr-0' : ''}`}
           >
-            <div className="relative aspect-[4/5] overflow-hidden bg-surface-container">
+            <div className="relative aspect-[4/5] overflow-hidden bg-surface-container rounded-lg lg:rounded-xl">
               <img
                 alt={combo.name}
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000"
+                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000"
                 src={combo.image}
               />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/50 to-black/10 z-10 pointer-events-none group-hover:from-black/97 group-hover:via-black/60 transition-all duration-700"></div>
+              <div className="absolute inset-0 border border-white/15 group-hover:border-white/30 rounded-lg lg:rounded-xl transition-colors duration-700 pointer-events-none shadow-inner"></div>
               <div className="absolute top-3 left-3 bg-white/90 backdrop-blur-md text-black px-2.5 py-1 text-[7px] lg:text-[9px] font-bold tracking-[0.2em] uppercase shadow-sm z-20">
                 Combo
               </div>
-              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent z-10 pointer-events-none"></div>
               
               <div className="absolute bottom-0 left-0 right-0 p-4 lg:p-6 text-left z-20">
                 <p className="font-body text-[8px] lg:text-[10px] text-stone-300 uppercase tracking-[0.2em] mb-1">{combo.products.length} Items</p>
@@ -49,7 +50,7 @@ export default function ComboSection({ onAddToCart }) {
                   </div>
                   <button
                     onClick={() => handleAddCombo(combo)}
-                    className="text-[9px] lg:text-[10px] uppercase tracking-[0.2em] text-white border-b border-white/50 pb-0.5 hover:border-secondary hover:text-secondary transition-colors"
+                    className="px-4 py-1.5 rounded-lg border border-secondary text-white text-[9px] lg:text-[10px] uppercase tracking-widest font-semibold bg-secondary/10 hover:bg-secondary hover:text-black transition-all duration-300 active:scale-95 hover:shadow-lg"
                   >
                     Add
                   </button>
