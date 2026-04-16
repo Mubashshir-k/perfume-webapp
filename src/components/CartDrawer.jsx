@@ -65,7 +65,7 @@ export default function CartDrawer({ items, isOpen, onClose, onRemove, onUpdateQ
               <p className="text-on-surface/60 font-body">Your cart is empty</p>
               <button
                 onClick={onClose}
-                className="mt-4 px-6 py-2 bg-secondary text-on-secondary rounded-full text-sm font-bold uppercase tracking-widest transition-all hover:bg-secondary/90"
+                className="mt-6 w-full px-6 py-3.5 bg-secondary hover:bg-secondary/90 text-on-secondary rounded-full text-sm font-bold uppercase tracking-widest transition-all duration-300 hover:shadow-lg active:scale-95"
               >
                 Continue Shopping
               </button>
@@ -122,13 +122,13 @@ export default function CartDrawer({ items, isOpen, onClose, onRemove, onUpdateQ
             </div>
             <button
               onClick={handleWhatsAppCheckout}
-              className="w-full py-3 border-2 border-stone-300 text-stone-700 rounded text-sm tracking-widest font-medium uppercase transition-all hover:border-secondary hover:text-secondary hover:bg-stone-50 active:scale-95"
+              className="w-full py-3.5 bg-secondary hover:bg-secondary/90 text-on-secondary rounded-full text-sm tracking-widest font-bold uppercase transition-all duration-300 hover:shadow-lg active:scale-95"
             >
               Checkout via WhatsApp
             </button>
             <button
               onClick={onClose}
-              className="w-full py-3 border-2 border-stone-300 text-stone-700 rounded text-sm tracking-widest font-medium uppercase transition-all hover:border-secondary hover:text-secondary hover:bg-stone-50 active:scale-95"
+              className="w-full py-3.5 border-2 border-secondary text-secondary rounded-full text-sm tracking-widest font-bold uppercase transition-all duration-300 hover:bg-secondary hover:text-on-secondary hover:shadow-lg active:scale-95"
             >
               Continue Shopping
             </button>

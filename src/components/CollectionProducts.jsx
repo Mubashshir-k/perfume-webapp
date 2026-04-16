@@ -22,37 +22,37 @@ export default function CollectionProducts({ collectionType, collectionName, onA
     <section className="py-24 px-4 lg:px-24 bg-gradient-to-b from-surface to-surface-container min-h-screen">
       {/* Breadcrumb */}
       <div className="flex items-center gap-2 mb-12 text-sm">
-        <button onClick={onBack} className="text-secondary hover:text-secondary/80 transition-colors">Home</button>
-        <span className="text-stone-400">›</span>
-        <button onClick={onBack} className="text-secondary hover:text-secondary/80 transition-colors">Collections</button>
-        <span className="text-stone-400">›</span>
-        <span className="text-stone-600">{collectionName}</span>
+        <button onClick={onBack} className="text-secondary hover:text-secondary/80 transition-colors font-medium">Home</button>
+        <span className="text-stone-400">/</span>
+        <button onClick={onBack} className="text-secondary hover:text-secondary/80 transition-colors font-medium">Collections</button>
+        <span className="text-stone-400">/</span>
+        <span className="text-stone-500 font-medium">{collectionName}</span>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
         {/* Sidebar Filters */}
         <div className="hidden lg:block">
-          <div className="sticky top-32 space-y-8">
+          <div className="sticky top-32 space-y-8 bg-white/50 backdrop-blur-sm p-6 rounded-xl border border-white/20">
             {/* Availability Filter */}
             <div className="space-y-4">
-              <h3 className="font-headline text-lg font-bold">Availability</h3>
-              <label className="flex items-center gap-3 cursor-pointer">
+              <h3 className="font-headline text-base lg:text-lg font-bold text-stone-900">Availability</h3>
+              <label className="flex items-center gap-3 cursor-pointer group">
                 <input
                   type="checkbox"
                   checked={filters.availability === 'all'}
                   onChange={() => setFilters({ ...filters, availability: 'all' })}
-                  className="w-4 h-4"
+                  className="w-4 h-4 rounded border-stone-300 text-secondary accent-secondary"
                 />
-                <span className="text-sm">All Products ({filteredProducts.length})</span>
+                <span className="text-sm text-stone-700 group-hover:text-secondary transition-colors">All Products ({filteredProducts.length})</span>
               </label>
-              <label className="flex items-center gap-3 cursor-pointer">
+              <label className="flex items-center gap-3 cursor-pointer group">
                 <input
                   type="checkbox"
                   checked={filters.availability === 'in-stock'}
                   onChange={() => setFilters({ ...filters, availability: 'in-stock' })}
-                  className="w-4 h-4"
+                  className="w-4 h-4 rounded border-stone-300 text-secondary accent-secondary"
                 />
-                <span className="text-sm">In stock (0)</span>
+                <span className="text-sm text-stone-700 group-hover:text-secondary transition-colors">In stock (0)</span>
               </label>
             </div>
 
@@ -83,13 +83,13 @@ export default function CollectionProducts({ collectionType, collectionName, onA
         {/* Products Grid */}
         <div className="lg:col-span-3">
           {/* Header */}
-          <div className="flex justify-between items-center mb-12">
+          <div className="flex justify-between items-start lg:items-center mb-12">
             <div>
-              <h1 className="font-headline text-4xl font-bold mb-2">{collectionName}</h1>
-              <p className="text-stone-600">{displayedProducts.length} products</p>
+              <h1 className="font-headline text-3xl lg:text-5xl font-bold mb-2">{collectionName}</h1>
+              <p className="text-stone-600 font-body text-sm lg:text-base">{displayedProducts.length} products</p>
             </div>
             <div className="hidden md:block">
-              <select className="border rounded px-4 py-2 text-sm">
+              <select className="border border-stone-300 rounded-lg px-4 py-2.5 text-sm font-body bg-white hover:border-secondary transition-colors">
                 <option>Best selling</option>
                 <option>Price: Low to High</option>
                 <option>Price: High to Low</option>
@@ -99,29 +99,30 @@ export default function CollectionProducts({ collectionType, collectionName, onA
           </div>
 
           {/* Products Grid */}
-          <div className="grid grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-8">
             {displayedProducts.length > 0 ? (
               displayedProducts.map(product => (
                 <div key={product.id} className="group flex flex-col">
-                  <div className="relative aspect-[4/5] bg-surface-container overflow-hidden mb-4 shadow-sm hover:shadow-xl transition-all duration-700">
+                  <div className="relative aspect-[4/5] bg-surface-container overflow-hidden mb-4 shadow-md hover:shadow-2xl transition-all duration-700 rounded-lg lg:rounded-xl border border-white/10 group-hover:border-white/20">
                     <img
                       alt={product.name}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000"
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000"
                       src={product.image}
                     />
+                    <div className="absolute inset-0 border border-white/10 group-hover:border-white/20 rounded-lg lg:rounded-xl transition-colors duration-700 pointer-events-none shadow-inner"></div>
                   </div>
                   
-                  <div className="text-left space-y-1 lg:space-y-1.5 px-0.5 flex-1">
+                  <div className="text-left space-y-2 lg:space-y-1.5 px-0.5 flex-1">
                     <h3 className="font-headline text-sm lg:text-lg font-bold leading-tight truncate text-stone-900 group-hover:text-secondary transition-colors">{product.name}</h3>
-                    <p className="font-body text-[11px] lg:text-sm font-semibold text-secondary pt-0.5">
+                    <p className="font-body text-xs lg:text-sm font-semibold text-secondary pt-0.5">
                       ₹{product.price}
-                      <span className="text-stone-400 text-[9px] lg:text-[11px] line-through ml-2 font-normal">₹{product.originalPrice}</span>
+                      <span className="text-stone-400 text-[8px] lg:text-[10px] line-through ml-2 font-normal">₹{product.originalPrice}</span>
                     </p>
                   </div>
                   
                   <button
                      onClick={() => onAddToCart(product)}
-                     className="w-full mt-3.5 py-2.5 border border-stone-300 text-stone-700 text-[9px] tracking-[0.2em] font-medium uppercase transition-all hover:bg-stone-50 active:bg-stone-100"
+                     className="w-full mt-3.5 py-2.5 border border-stone-800 text-stone-900 text-[9px] tracking-[0.2em] font-bold uppercase transition-all duration-300 hover:bg-stone-900 hover:text-stone-100 hover:shadow-lg active:shadow-md active:scale-95 rounded-lg"
                   >
                     Add to Bag
                   </button>

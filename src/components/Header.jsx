@@ -25,47 +25,50 @@ export default function Header({ cartCount, onCartClick }) {
 
   return (
     <>
-      <nav className="bg-[#f9f9f9]/80 dark:bg-stone-950/80 backdrop-blur-xl fixed top-0 w-full z-50 shadow-[0_20px_50px_rgba(26,28,28,0.06)]">
-        <div className="flex justify-between items-center px-4 lg:px-8 py-3 lg:py-6 max-w-full mx-auto">
+      <nav className="bg-white/80 dark:bg-stone-950/80 backdrop-blur-2xl fixed top-0 w-full z-50 shadow-[0_8px_32px_rgba(26,28,28,0.1)] border-b border-stone-200/20">
+        <div className="flex justify-between items-center px-4 lg:px-12 py-3 lg:py-5 max-w-full mx-auto">
           {/* Desktop Navigation */}
-          <div className="flex-1 flex gap-4 items-center font-['Noto_Serif'] text-[10px] tracking-widest uppercase hidden lg:flex flex-wrap">
+          <div className="flex-1 flex gap-6 items-center font-['Noto_Serif'] text-[10px] tracking-widest uppercase hidden lg:flex flex-wrap">
             {menuItems.map((item, idx) => (
               <button
                 key={idx}
                 onClick={() => handleNavClick(item.href, () => {})}
-                className={`pb-1 transition-all duration-300 whitespace-nowrap ${
+                className={`pb-2 transition-all duration-500 whitespace-nowrap relative group ${
                   item.label === 'Collections'
-                    ? 'text-[#C9A24A] border-b border-[#C9A24A]'
-                    : 'text-stone-600 dark:text-stone-400 hover:text-[#C9A24A] hover:border-b hover:border-[#C9A24A]'
+                    ? 'text-secondary'
+                    : 'text-stone-600 dark:text-stone-400 hover:text-secondary'
                 }`}
               >
                 {item.label}
+                <span className={`absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-secondary to-secondary/50 transition-all duration-500 ${
+                  item.label === 'Collections' ? 'w-full' : 'group-hover:w-full w-0'
+                }`}></span>
               </button>
             ))}
           </div>
           
           <div className="flex-1 text-center">
-            <a className="text-lg lg:text-2xl font-serif tracking-tighter text-black dark:text-white uppercase font-bold" href="/">L'Essence Pure</a>
+            <a className="text-lg lg:text-2xl font-serif tracking-tighter text-black dark:text-white uppercase font-bold hover:text-secondary transition-colors duration-300" href="/">L'Essence Pure</a>
           </div>
           
-          <div className="flex-1 flex justify-end items-center gap-3 lg:gap-6">
-            <button className="scale-105 transition-transform text-stone-600 hover:text-[#C9A24A] hidden md:block">
+          <div className="flex-1 flex justify-end items-center gap-4 lg:gap-8">
+            <button className="p-2 rounded-full hover:bg-secondary/10 transition-all duration-300 text-stone-600 hover:text-secondary dark:text-stone-300 dark:hover:text-secondary hidden md:block">
               <span className="material-symbols-outlined">search</span>
             </button>
             <button
               onClick={onCartClick}
-              className="scale-105 transition-transform text-stone-600 hover:text-[#C9A24A] relative"
+              className="p-2 rounded-full hover:bg-secondary/10 transition-all duration-300 text-stone-600 hover:text-secondary dark:text-stone-300 dark:hover:text-secondary relative group"
             >
-              <span className="material-symbols-outlined">shopping_bag</span>
+              <span className="material-symbols-outlined group-hover:scale-110 transition-transform duration-300">shopping_bag</span>
               {cartCount > 0 && (
-                <span className="absolute -top-2 -right-2 bg-secondary text-on-secondary text-[10px] w-5 h-5 rounded-full flex items-center justify-center font-bold">
+                <span className="absolute -top-1 -right-1 bg-gradient-to-br from-secondary to-secondary/80 text-white text-[10px] w-5 h-5 rounded-full flex items-center justify-center font-bold shadow-lg">
                   {cartCount}
                 </span>
               )}
             </button>
             <button 
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="scale-105 transition-transform text-stone-600 hover:text-[#C9A24A] lg:hidden"
+              className="p-2 rounded-full hover:bg-secondary/10 transition-all duration-300 text-stone-600 hover:text-secondary dark:text-stone-300 dark:hover:text-secondary lg:hidden"
             >
               <span className="material-symbols-outlined">menu</span>
             </button>

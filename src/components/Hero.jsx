@@ -22,35 +22,37 @@ export default function Hero() {
           <div key={idx} className="w-full h-full flex-shrink-0">
             <img
               alt={`Luxury perfume ${idx + 1}`}
-              className="w-full h-full object-cover opacity-70 hover:opacity-80 transition-opacity"
+              className="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity duration-700"
               src={image}
             />
           </div>
         ))}
       </div>
-      <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-transparent z-5"></div>
-      <div className="absolute bottom-12 left-1/2 -translate-x-1/2 z-20 flex gap-2">
+      <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-black/20 to-transparent z-5"></div>
+      <div className="absolute bottom-12 left-1/2 -translate-x-1/2 z-20 flex gap-3">
         {heroImages.map((_, idx) => (
           <button
             key={idx}
             onClick={() => setCurrentSlide(idx)}
-            className={`transition-all duration-500 rounded-none ${idx === currentSlide ? 'bg-white w-8 h-1' : 'bg-white/30 w-4 h-1 hover:bg-white/60'}`}
+            className={`transition-all duration-500 rounded-full ${idx === currentSlide ? 'bg-white w-8 h-2' : 'bg-white/40 w-2 h-2 hover:bg-white/70'}`}
           />
         ))}
       </div>
-      <div className="relative z-10 max-w-2xl space-y-8 mt-12 lg:mt-0">
+      <div className="relative z-10 max-w-2xl space-y-8 mt-12 lg:mt-0 animate-fade-in">
         <div className="space-y-2 lg:space-y-6">
-          <span className="font-body text-[9px] lg:text-xs tracking-[0.4em] uppercase text-stone-300">Exclusive Seasonal Curations</span>
-          <h1 className="font-headline text-2xl lg:text-7xl font-bold leading-tight tracking-wide text-white drop-shadow-2xl">
+          <span className="font-body text-[9px] lg:text-xs tracking-[0.4em] uppercase text-stone-300/80 block">
+            ✨ Exclusive Seasonal Curations
+          </span>
+          <h1 className="font-headline text-3xl lg:text-7xl font-bold leading-tight tracking-wide text-white drop-shadow-2xl animate-slide-up">
             BUY ANY 4 <br />
-            <span className="text-secondary font-medium tracking-normal text-lg lg:text-6xl">@ ₹1299</span>
+            <span className="bg-gradient-to-r from-secondary via-secondary to-yellow-400 bg-clip-text text-transparent font-medium tracking-normal text-2xl lg:text-6xl">@ ₹1299</span>
           </h1>
         </div>
-        <div className="flex flex-col sm:flex-row gap-4 pt-4">
-          <button onClick={() => document.getElementById('arrivals')?.scrollIntoView({ behavior: 'smooth' })} className="px-10 py-3.5 bg-stone-100 text-stone-900 rounded-none font-body text-[10px] tracking-[0.2em] uppercase font-bold transition-all duration-300 hover:bg-stone-300">
+        <div className="flex flex-col sm:flex-row gap-4 pt-6">
+          <button onClick={() => document.getElementById('arrivals')?.scrollIntoView({ behavior: 'smooth' })} className="px-8 py-3.5 bg-gradient-to-r from-stone-100 to-stone-200 text-stone-900 rounded-xl font-body text-[10px] tracking-[0.2em] uppercase font-bold transition-all duration-300 hover:shadow-xl hover:from-white hover:to-stone-100 hover:scale-105 active:scale-95">
             Shop Now
           </button>
-          <button onClick={() => document.getElementById('collections')?.scrollIntoView({ behavior: 'smooth' })} className="px-10 py-3.5 bg-transparent border border-white/50 text-white rounded-none font-body text-[10px] tracking-[0.2em] uppercase font-medium hover:bg-white hover:text-black transition-all duration-300">
+          <button onClick={() => document.getElementById('collections')?.scrollIntoView({ behavior: 'smooth' })} className="px-8 py-3.5 bg-white/10 backdrop-blur-md border border-white/50 text-white rounded-xl font-body text-[10px] tracking-[0.2em] uppercase font-bold hover:bg-white/20 hover:border-white transition-all duration-300 hover:shadow-xl hover:scale-105 active:scale-95">
             Explore Collection
           </button>
         </div>
