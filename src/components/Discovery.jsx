@@ -12,31 +12,17 @@ export default function Discovery({ onStartJourney }) {
             <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
           </div>
         </div>
-        <div className="flex-1 space-y-8 px-4 lg:px-0">
-          <div className="space-y-4">
+        <div className="flex-1 space-y-6 lg:space-y-8 px-4 lg:px-0">
+          <div className="space-y-3 lg:space-y-4">
             <span className="font-label text-xs tracking-[0.4em] uppercase text-secondary font-bold">
               Finding Your Essence
             </span>
-            <h2 className="font-headline text-4xl lg:text-5xl font-bold leading-tight">The Discovery Set</h2>
-            <p className="font-body text-stone-600 leading-relaxed text-lg">
-              Experience the full range of L'Essence Pure before committing to a full bottle. Six 2ml vials of our most celebrated fragrances curated for your journey of olfactory discovery.
+            <h2 className="font-headline text-2xl lg:text-5xl font-bold leading-tight">The Discovery Set</h2>
+            <p className="font-body text-stone-600 text-xs lg:text-sm">
+              Explore our curated collection. Six 2ml samples to find your signature scent.
             </p>
-            <ul className="space-y-4 pt-6">
-              <li className="flex items-start gap-4">
-                <span className="text-secondary material-symbols-outlined text-sm mt-0.5" style={{ fontVariationSettings: "'wght' 300" }}>horizontal_rule</span>
-                <span className="font-body text-sm tracking-wide text-stone-700">Six signature 2ml samples</span>
-              </li>
-              <li className="flex items-start gap-4">
-                <span className="text-secondary material-symbols-outlined text-sm mt-0.5" style={{ fontVariationSettings: "'wght' 300" }}>horizontal_rule</span>
-                <span className="font-body text-sm tracking-wide text-stone-700">Perfect for travel or gifting</span>
-              </li>
-              <li className="flex items-start gap-4">
-                <span className="text-secondary material-symbols-outlined text-sm mt-0.5" style={{ fontVariationSettings: "'wght' 300" }}>horizontal_rule</span>
-                <span className="font-body text-sm tracking-wide text-stone-700">Handcrafted, curated selection</span>
-              </li>
-            </ul>
           </div>
-          <button onClick={onStartJourney} className="mt-4 px-8 py-3.5 border border-stone-800 text-stone-900 bg-transparent text-xs tracking-[0.2em] font-medium uppercase transition-all duration-300 hover:bg-stone-900 hover:text-white rounded-none">
+          <button onClick={onStartJourney} className="px-8 py-3.5 border border-stone-800 text-stone-900 bg-transparent text-xs tracking-[0.2em] font-medium uppercase transition-all duration-300 hover:bg-stone-900 hover:text-white rounded-none">
             Start Discovery Journey
           </button>
         </div>

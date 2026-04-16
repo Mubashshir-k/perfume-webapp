@@ -15,10 +15,10 @@ export default function ComboSection({ onAddToCart }) {
 
   return (
     <section className="py-12 lg:py-24 bg-gradient-to-b from-surface to-surface-container">
-      <div className="text-center mb-8 lg:mb-16 space-y-2 lg:space-y-4 px-4 lg:px-24">
+      <div className="text-center mb-6 lg:mb-16 space-y-1.5 lg:space-y-4 px-4 lg:px-24">
         <span className="font-label text-xs tracking-[0.5em] uppercase text-secondary font-bold">Premium Selection</span>
-        <h2 className="font-headline text-4xl lg:text-5xl font-bold">Combo Collections</h2>
-        <p className="font-body text-stone-600 max-w-2xl mx-auto">Curated combinations of our finest fragrances, designed for those who appreciate luxury.</p>
+        <h2 className="font-headline text-2xl lg:text-5xl font-bold">Combo Collections</h2>
+        <p className="font-body text-stone-600 max-w-2xl mx-auto text-xs lg:text-base">Curated combinations of our finest fragrances, designed for those who appreciate luxury.</p>
       </div>
       <div className="flex overflow-x-auto gap-3 lg:gap-8 pb-4 scroll-smooth no-scrollbar lg:grid lg:grid-cols-3 lg:gap-8 lg:overflow-x-visible snap-x snap-mandatory lg:px-24">
         {combos.map((combo, index) => (

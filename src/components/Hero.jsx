@@ -39,11 +39,11 @@ export default function Hero() {
         ))}
       </div>
       <div className="relative z-10 max-w-2xl space-y-8 mt-12 lg:mt-0">
-        <div className="space-y-4 lg:space-y-6">
-          <span className="font-body text-[10px] lg:text-xs tracking-[0.4em] uppercase text-stone-300">Exclusive Seasonal Curations</span>
-          <h1 className="font-headline text-4xl lg:text-7xl font-bold leading-tight tracking-wide text-white drop-shadow-2xl">
+        <div className="space-y-2 lg:space-y-6">
+          <span className="font-body text-[9px] lg:text-xs tracking-[0.4em] uppercase text-stone-300">Exclusive Seasonal Curations</span>
+          <h1 className="font-headline text-2xl lg:text-7xl font-bold leading-tight tracking-wide text-white drop-shadow-2xl">
             BUY ANY 4 <br />
-            <span className="text-secondary font-medium tracking-normal text-3xl lg:text-6xl">@ ₹1299</span>
+            <span className="text-secondary font-medium tracking-normal text-lg lg:text-6xl">@ ₹1299</span>
           </h1>
         </div>
         <div className="flex flex-col sm:flex-row gap-4 pt-4">

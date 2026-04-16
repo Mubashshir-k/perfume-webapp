@@ -6,10 +6,10 @@ export default function WatchBuy({ onAddToCart }) {
   return (
     <section className="py-12 lg:py-24 space-y-8 lg:space-y-12 bg-gradient-to-b from-surface-bright to-surface">
       <div className="px-4 lg:px-24 flex justify-between items-end">
-        <div className="space-y-4">
+        <div className="space-y-2 lg:space-y-4">
           <span className="font-label text-xs tracking-[0.2em] uppercase text-secondary font-bold">The Olfactory Journal</span>
-          <h2 className="font-headline text-4xl lg:text-5xl font-bold">Watch & Buy</h2>
-          <p className="font-body text-stone-600 max-w-xl">Discover stories from our community of fragrance enthusiasts. Real people, real experiences, real scents.</p>
+          <h2 className="font-headline text-2xl lg:text-5xl font-bold">Watch & Buy</h2>
+          <p className="font-body text-stone-600 max-w-xl text-xs lg:text-base">Discover stories from our community of fragrance enthusiasts. Real people, real experiences, real scents.</p>
         </div>
         <button className="hidden lg:inline-block font-label text-xs tracking-widest uppercase border-b-2 border-secondary pb-2 hover:text-secondary transition-colors">
           View All Stories
